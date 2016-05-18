@@ -1,0 +1,15 @@
+﻿@model MVCDemo.Models.Challenges
+
+@{
+    ViewBag.Title = "Challenges";
+}
+
+
+<form>
+    <br /><br />
+    Select A Challenge:  
+       
+    @Html.DropDownList("challenges",Model.Challengelist,"Select Challenge..." )
+    
+
+</form>
