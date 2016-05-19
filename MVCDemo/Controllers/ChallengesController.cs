@@ -14,7 +14,7 @@ namespace MVCDemo.Controllers
             return View();
         }
 
-        public ActionResult ChallengeSubmit()
+        public ActionResult PostSolution ()
         {
             return View();
         }

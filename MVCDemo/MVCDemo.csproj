@@ -164,12 +164,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ChallengesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PostSolutionController.cs" />
+    <Compile Include="DataAccessLayer\DBdata.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ChallengeContext.cs" />
     <Compile Include="Models\Challenges.cs" />
     <Compile Include="Models\Solutions.cs" />
+    <Compile Include="Models\Solutions1.cs" />
+    <Compile Include="Models\SolutionsContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -217,6 +221,7 @@
     <Content Include="Views\Challenges\ChallengesDetails.cshtml" />
     <Content Include="Views\Challenges\ChallengeSubmit.cshtml" />
     <Content Include="Views\Challenges\ViewSolutions.cshtml" />
+    <Content Include="Views\PostSolution\PostSolution.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -35,6 +35,7 @@ namespace MVCDemo.Controllers
             
             return View(ch);
         }
+
         public ActionResult ChallengesDetails()
         {
 
@@ -42,6 +43,6 @@ namespace MVCDemo.Controllers
             
             return View();
         }
-
+        
     }
 }

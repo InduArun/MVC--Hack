@@ -18,14 +18,15 @@ namespace MVCDemo.Models
 
         
         public IEnumerable<Challenges> GetOptions()           //fetch the tournament type details from the table
-    {
+        {
            
 
                 string query = "SELECT * from tblChallengesMaster";
                 var result = connection.Query<Challenges>(query);
+                connection.Close();
                 return result;
-
-          
+                
+             
 
         }
 

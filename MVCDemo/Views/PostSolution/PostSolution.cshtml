@@ -1,0 +1,49 @@
+﻿@model MVCDemo.Models.Solutions1
+@{
+    ViewBag.Title = "PostSolution";
+    //Layout = "~/Views/Home/Challenges.cshtml";
+}
+<br />
+<h2>PostSolution</h2>
+@using (Html.BeginForm())
+{
+    <table width="100%">
+        <tr>
+            <td>
+                @Html.LabelFor(a => a.solution)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.TextBoxFor(a => a.solution)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(a => a.user)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.TextBoxFor(a => a.user)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(a => a.department)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.TextBoxFor(a => a.department)
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input id="Submit1" type="submit" value="submit" />
+            </td>
+        </tr>
+    </table>
+}
+
+
