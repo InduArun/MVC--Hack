@@ -1,0 +1,30 @@
+﻿@model MVCDemo.Models.Solutions
+
+@{
+    ViewBag.Title = "ChallengesDetails";
+}
+
+
+<div>
+    <h2>Description</h2>
+
+    @Html.DisplayFor(model => model.Solution)
+
+
+   
+    <input type="button" id="btnBack" value="Back" />
+  
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+<script language="javascript">
+    //$('#ChallengeTitle').change(function () {
+    //    alert($(this).val());
+    //});
+    
+
+    $('#btnBack').click(function () {
+        window.location.href = "http://localhost:49502/Challenges/ViewSolutions/";
+    });
+</script>

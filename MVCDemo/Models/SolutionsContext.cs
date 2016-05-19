@@ -15,8 +15,8 @@ namespace MVCDemo.Models
         SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["ChallengeContext"].ToString());
 
         public DbSet<Solutions1> Solutions { get; set; }
-
-        public int InsertSolution(Solutions1 sol)
+        
+        public int InsertSolution(Solutions1 sol,int selectedValue)
         {
             SqlConnection con = null;
             string result1 = "Exception";
@@ -25,7 +25,7 @@ namespace MVCDemo.Models
             //{
                 connection.Open();
                 SqlCommand cmd = new SqlCommand
-                ("insert into dbo.tblChallengesSolutions(ChallengeId, Name, Department, Solution)values(1,'"+sol.user + "','"+sol.department+"','"+sol.solution+"')",connection);
+                ("insert into dbo.tblChallengesSolutions(ChallengeId, Name, Department, Solution)values('"+selectedValue+"','" + sol.user + "','"+sol.department+"','"+sol.solution+"')",connection);
                 var result = cmd.ExecuteNonQuery();
                 connection.Close();
                 return result;

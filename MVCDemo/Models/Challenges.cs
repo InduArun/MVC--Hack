@@ -11,9 +11,14 @@ namespace MVCDemo.Models
     public class Challenges
     {
         public int ChallengeId { get; set; }
+
+        public string ChallengeTitle { get; set;}
+
         public string ChallengeDescription { get; set; }
 
         public SelectList Challengelist { get; set; }
+
+        public int SelectedValueInDropDown { get; set;}
 
     }
 }

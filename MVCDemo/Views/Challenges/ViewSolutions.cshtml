@@ -1,8 +1,30 @@
-﻿@model IEnumerable<MVCDemo.Models.Solutions>
+﻿
+@using GridMvc.Html
+
+@model IEnumerable<MVCDemo.Models.Solutions>
 
 @{
     ViewBag.Title = "ViewSolutions";
 }
-
+<div>
 <h2>ViewSolutions</h2>
+
+@Html.Grid(Model).Columns(columns =>
+{
+columns.Add(c => c.Name).Titled("Name");
+columns.Add(c => c.Department).Titled("Department");
+columns.Add(c => c.Solution).Titled("Solution");
+    //.Encoded(false)
+    //.Sanitized(false)
+    //.Titled("Solution Link")
+    // .RenderValueAs(c => Html.ActionLink("view", null, null, new { id = "id1",target = "_blank"}));
+
+})
+
+<input type="button" id="btnBack" value="Back" onclick="@("window.location.href='" + @Url.Action("ChallengesDetails", "Challenges") + "'");"/>
+
+</div>
+
+
+
 

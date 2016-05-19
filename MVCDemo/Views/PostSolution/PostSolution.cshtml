@@ -5,9 +5,11 @@
 }
 <br />
 <h2>PostSolution</h2>
+<p>@ViewBag.SuccessMessage</p>
+
 @using (Html.BeginForm())
 {
-    <table width="100%">
+    <table id ="tblPostSolution" name = "tblPostSolution" width="100%">
         <tr>
             <td>
                 @Html.LabelFor(a => a.solution)
@@ -15,7 +17,7 @@
         </tr>
         <tr>
             <td>
-                @Html.TextBoxFor(a => a.solution)
+                @Html.TextAreaFor(a => a.solution)
             </td>
         </tr>
         <tr>
@@ -26,6 +28,7 @@
         <tr>
             <td>
                 @Html.TextBoxFor(a => a.user)
+                
             </td>
         </tr>
         <tr>
@@ -40,10 +43,17 @@
         </tr>
         <tr>
             <td colspan="2">
-                <input id="Submit1" type="submit" value="submit" />
+                <input id="Submit1" type="submit" value="submit" onclick="hideTable();"/>
             </td>
         </tr>
     </table>
+    <script type="text/javascript">
+        function hideTable()
+        {
+            document.getElementById("tblPostSolution").style.display = 'block';
+        }
+    </script>
+
 }
 
 

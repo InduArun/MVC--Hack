@@ -14,9 +14,11 @@ namespace MVCDemo.Models
     {
         public int ChallengeId { get; set; }
         public string Name { get; set; }
-        public string Dept { get; set; }
+        public string Department { get; set; }
         public string Solution { get; set; }
         public SelectList SolutionList { get; set; }
+
+        public bool success { get; set;}
 
     }
 }

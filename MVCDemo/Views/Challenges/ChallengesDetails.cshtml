@@ -1,4 +1,4 @@
-﻿@model MVCDemo.Models.Solutions
+﻿@model MVCDemo.Models.Challenges
 
 @{
     ViewBag.Title = "ChallengesDetails";
@@ -6,18 +6,30 @@
 
 
 <div>
-
-    
-
     <h2>Description</h2>
 
-    <p>
-        This is the challenge to write a Java code for the prime number finding program  
-    </p>  
+  @Html.DisplayFor(model => model.ChallengeDescription)
 
+
+    <!--onclick="@("window.location.href='" + @Url.Action("PostSolution", "PostSolution") + "'");" -->
+    <!--onclick="@("window.location.href='" + @Url.Action("ViewSolutions", "Challenges") + "'");" -->
     <hr />
-
-    <input type="button" value="Submit Your Solution " onclick="@("window.location.href='" + @Url.Action("PostSolution", "PostSolution") + "'");" />
-
-    <input type="button" value="View Solution " onclick="@("window.location.href='" + @Url.Action("ViewSolutions", "Challenges") + "'");" />
+    <input type="button" id="btnSubmitSolution" value="Submit Your Solution " />
+    <input type="button" id="btnViewSolution" value="View Solution " />
     </div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+<script language="javascript">
+    //$('#ChallengeTitle').change(function () {
+    //    alert($(this).val());
+    //});
+    $('#btnSubmitSolution').click(function () {
+        window.location.href = "http://localhost:49502/PostSolution/PostSolution/";
+
+    });
+
+    $('#btnViewSolution').click(function () {
+        window.location.href = "http://localhost:49502/Challenges/ViewSolutions/";
+    });
+</script>

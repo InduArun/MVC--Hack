@@ -5,14 +5,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace MVCDemo.Controllers
 {
     public class HomeController : Controller
     {
 
         ChallengeContext challengecontext = new ChallengeContext();
-
-     
 
         public ActionResult Index()
         {
@@ -25,24 +24,26 @@ namespace MVCDemo.Controllers
 
             return View();
         }
-
+        
+        
         public ActionResult Challenges()
         {
-
-
             Challenges ch = new Challenges();
-             ch.Challengelist = new SelectList(challengecontext.GetOptions(), "ChallengeId", "ChallengeDescription");
-            
+            ch.Challengelist = new SelectList(challengecontext.GetOptions(), "ChallengeId", "ChallengeTitle");
+           // int value = GetSelectedValue(ch);
             return View(ch);
         }
 
-        public ActionResult ChallengesDetails()
+        [HttpPost]
+        public ActionResult Challenges(string ChallengeTitle)
         {
+            ViewData["SelectedOption"] = ChallengeTitle;
+            return View("ChallengesDetails");
 
-
-            
-            return View();
         }
-        
+
+
+
+
     }
 }

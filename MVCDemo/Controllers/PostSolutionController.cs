@@ -10,20 +10,33 @@ namespace MVCDemo.Controllers
 {
     public class PostSolutionController : Controller
     {
+        // ViewBag.isFalse = false;
         // GET: PostSolution
+
+       public int id;
         public ActionResult PostSolution()
         {
+           id =  ChallengesController.chalId;
             return View();
         }
 
         [HttpPost]
         public ActionResult PostSolution(Solutions1 sol)
         {
+            ViewBag.isSuccess = false;
             if (ModelState.IsValid) //checking model is valid or not
+
             {
                 SolutionsContext solCo = new SolutionsContext();
-                int result = solCo.InsertSolution(sol); // passing Value to DBClass from model
+                int result = solCo.InsertSolution(sol,
+                    ChallengesController.chalId);
+
+                // passing Value to DBClass from model
                 ViewData["result"] = result;
+
+                ViewBag.SuccessMessage = "Success";
+                ViewBag.isSuccess = true;
+
                 ModelState.Clear(); //clearing model
                 return View();
             }
