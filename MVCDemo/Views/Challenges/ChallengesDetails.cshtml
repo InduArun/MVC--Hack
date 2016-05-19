@@ -1,0 +1,23 @@
+﻿@model MVCDemo.Models.Solutions
+
+@{
+    ViewBag.Title = "ChallengesDetails";
+}
+
+
+<div>
+
+    
+
+    <h2>Description</h2>
+
+    <p>
+        This is the challenge to write a Java code for the prime number finding program  
+    </p>  
+
+    <hr />
+
+    <input type="button" value="Submit Your Solution " onclick="@("window.location.href='" + @Url.Action("ChallengeSubmit", "Challenges") + "'");" />
+
+    <input type="button" value="View Solution " onclick="@("window.location.href='" + @Url.Action("ViewSolutions", "Challenges") + "'");" />
+    </div>

@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Challenges";
+  
 }
 
 
@@ -9,7 +10,20 @@
     <br /><br />
     Select A Challenge:  
        
-    @Html.DropDownList("challenges",Model.Challengelist,"Select Challenge..." )
+
+
+  @Html.DropDownList("challenges",Model.Challengelist,"Select Challenge..." )
+
+   
+
+    
+
+    @ViewBag.Message
+
+
+    <input type="button" value="Enter" onclick="@("window.location.href='" + @Url.Action("ChallengesDetails", "Challenges") + "'");" />
+   
+
     
 
 </form>

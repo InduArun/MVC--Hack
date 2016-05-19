@@ -11,6 +11,9 @@ namespace MVCDemo.Controllers
     {
 
         ChallengeContext challengecontext = new ChallengeContext();
+
+     
+
         public ActionResult Index()
         {
             return View();
@@ -26,9 +29,19 @@ namespace MVCDemo.Controllers
         public ActionResult Challenges()
         {
 
+
             Challenges ch = new Challenges();
              ch.Challengelist = new SelectList(challengecontext.GetOptions(), "ChallengeId", "ChallengeDescription");
-              return View(ch);
+            
+            return View(ch);
         }
+        public ActionResult ChallengesDetails()
+        {
+
+
+            
+            return View();
+        }
+
     }
 }

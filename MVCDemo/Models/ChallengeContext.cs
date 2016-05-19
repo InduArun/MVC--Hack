@@ -28,5 +28,9 @@ namespace MVCDemo.Models
           
 
         }
+
+        public DbSet<Solutions> SolutionsDetails { get; set; }
+
+
     }
 }
