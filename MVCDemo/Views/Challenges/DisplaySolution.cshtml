@@ -1,19 +1,66 @@
-﻿@model MVCDemo.Models.Solutions
+﻿<html>
+@model MVCDemo.Models.Solutions
 
 @{
-    ViewBag.Title = "ChallengesDetails";
+    ViewBag.Title = "Display Solution";
 }
 
+<body style="background-image: url('../../Images//challen.png'); background-size: cover; color: white">
 
+    
 <div>
-    <h2>Description</h2>
+    <br />
+    <h2>Solution</h2>
 
     @Html.DisplayFor(model => model.Solution)
 
+    <p>
+        Double Square Problem Analysis:
+        This problem can be brute-forced (Read below for an efficient O(vM) solution). At first I thought of an approach using DP, but it would require an array of size 2147483647, which requires at least 2GB of memory (assuming each element of the array is of type unsigned char).
 
-   
-    <input type="button" id="btnBack" value="Back" />
-  
+
+
+        Some interesting double squares. Isn’t Math beautiful?
+
+        Unfortunately, my C++ program failed to allocate such huge amount of memory. I quickly thought of another approach using bit manipulation to store two values in each array element (ie, each occupying 4 bits, half of the size of unsigned char). Although this halved the memory usage requirement, this also means the maximum value of each element could not exceed 24 = 16, which is not true, since the largest value could go up to 64. (ie, total number of double squares for the number 1215306625 is 64.)
+
+        The brute-force method is easy to implement and its complexity is O(M), where M is the input number. Since the input specified that N (total number of inputs) is at most 100, the brute force approach still holds, even though it might take about 30 seconds to few minutes to run.
+
+        int doubleSquare(unsigned int m)
+        {
+        int total = 0;
+        int iUpper = sqrt((double)m / 2.0);
+        for (int i = 0; i <= iUpper; i++)
+        {
+        unsigned int ii = i*i;
+        for (int j = i; ; j++)
+        {
+        unsigned int sum = ii + j*j;
+        if (sum == m)
+        total++;
+        else if (sum > m)
+        break;
+        }
+        }
+
+        return total;
+        }
+
+    </p>
+
+    <p>
+        <a id="aVote" style="cursor:pointer;">
+            <img src="~/Images/vote-button-md.png" height="60px" />
+        </a>
+        <div><b>Comment</b></div>
+        <textarea rows="4" cols="50"></textarea>
+    </p>
+
+    <p align="right">
+        <input type="button" id="btnBack" value="Back" />
+    </p>
+
+
 </div>
 
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
@@ -22,9 +69,15 @@
     //$('#ChallengeTitle').change(function () {
     //    alert($(this).val());
     //});
-    
+
 
     $('#btnBack').click(function () {
         window.location.href = "http://localhost:49502/Challenges/ViewSolutions/";
     });
+
+    $('#aVote').click(function () {
+        alert('Well done , Thanks a lot...!');
+    });
 </script>
+    </body>
+</html>

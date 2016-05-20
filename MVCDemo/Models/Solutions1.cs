@@ -17,11 +17,11 @@ namespace MVCDemo.Models
         public string solution { get; set; }
 
         [Required(ErrorMessage = "Please Enter User")]
-        [Display(Name = "Enter your name")]
+        [Display(Name = "Name")]
         public string user{ get; set; }
 
         [Required(ErrorMessage = "Please Enter Department")]
-        [Display(Name = "Enter the department")]
+        [Display(Name = "Team")]
         public string department { get; set; }
     }
 }

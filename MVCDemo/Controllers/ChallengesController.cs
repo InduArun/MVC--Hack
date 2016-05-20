@@ -50,6 +50,14 @@ namespace MVCDemo.Controllers
 
         }
 
+        [HttpPost]
+        public ActionResult ViewSolutions(int id)
+        {
+           
+            return View();
+
+        }
+
         public ActionResult DisplaySolution()
         {
 

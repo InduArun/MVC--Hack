@@ -23,7 +23,7 @@ namespace MVCDemo.Controllers
         [HttpPost]
         public ActionResult PostSolution(Solutions1 sol)
         {
-            ViewBag.isSuccess = false;
+            ViewBag.isSuccess = null;
             if (ModelState.IsValid) //checking model is valid or not
 
             {
@@ -34,7 +34,8 @@ namespace MVCDemo.Controllers
                 // passing Value to DBClass from model
                 ViewData["result"] = result;
 
-                ViewBag.SuccessMessage = "Success";
+                ViewBag.SuccessMessage = "Successfully Posted Your Solution";
+              
                 ViewBag.isSuccess = true;
 
                 ModelState.Clear(); //clearing model

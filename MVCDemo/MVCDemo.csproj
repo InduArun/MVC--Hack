@@ -93,6 +93,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.JScript" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -188,8 +189,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Chall.png" />
+    <Content Include="Images\challen.png" />
+    <Content Include="Images\challenge-yourself.png" />
+    <Content Include="Images\challenge.png" />
+    <Content Include="Images\extra-mile-to-success.png" />
     <Content Include="Images\fourth-logo.png" />
     <Content Include="Images\k10080898.png" />
+    <Content Include="Images\Test.png" />
+    <Content Include="Images\vote-button-md.png" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />

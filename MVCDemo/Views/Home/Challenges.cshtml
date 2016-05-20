@@ -1,28 +1,47 @@
-﻿@model MVCDemo.Models.Challenges
+﻿<html>
+
+@model MVCDemo.Models.Challenges
 @{
     ViewBag.Title = "Challenges";
 
 }
-<br /><br />
-    Select A Challenge: 
-@using (Html.BeginForm(FormMethod.Post))
-{
+<head style="background-color: black">
 
-  @Html.DropDownListFor(m => m.ChallengeTitle, Model.Challengelist, "Select Challenge...")
+</head>
+
+<body style="background-image: url('../../Images//challen.png'); background-size: cover; color: white">
+    <div >
+        <br /><br />
+        <h2>
+            Select A Challenge
+
+        </h2>
 
 
-  @ViewBag.Message
- 
-    <input type="button" id="btnEnter" value="Enter" />
-}
 
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        @using (Html.BeginForm(FormMethod.Post))
+        {
 
-<script language="javascript">
-    //$('#ChallengeTitle').change(function () {
-    //    alert($(this).val());
-    //});
-    $('#btnEnter').click(function () {
-        window.location.href = "http://localhost:49502/Challenges/ChallengesDetails/" + $('#ChallengeTitle').val();
-    });
-</script>
+            @Html.DropDownListFor(m => m.ChallengeTitle, Model.Challengelist, "Select Challenge...")
+
+
+            @ViewBag.Message
+
+            <input type="button" id="btnEnter" value="Enter" />
+        }
+
+
+
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+        <script language="javascript">
+            //$('#ChallengeTitle').change(function () {
+            //    alert($(this).val());
+            //});
+            $('#btnEnter').click(function () {
+                window.location.href = "http://localhost:49502/Challenges/ChallengesDetails/" + $('#ChallengeTitle').val();
+            });
+        </script>
+    </div>
+</body>
+</html>

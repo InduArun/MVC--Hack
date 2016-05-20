@@ -1,11 +1,17 @@
-﻿@model MVCDemo.Models.Solutions1
+﻿<html>
+@model MVCDemo.Models.Solutions1
 @{
     ViewBag.Title = "PostSolution";
     //Layout = "~/Views/Home/Challenges.cshtml";
 }
+<body style="background-image: url('../../Images//challen.png'); background-size: cover; color: white">
 <br />
 <h2>PostSolution</h2>
-<p>@ViewBag.SuccessMessage</p>
+
+
+
+
+
 
 @using (Html.BeginForm())
 {
@@ -17,7 +23,9 @@
         </tr>
         <tr>
             <td>
-                @Html.TextAreaFor(a => a.solution)
+                @Html.TextAreaFor(a => a.solution, new { cols = "1000", rows = "10" })
+
+
             </td>
         </tr>
         <tr>
@@ -28,7 +36,7 @@
         <tr>
             <td>
                 @Html.TextBoxFor(a => a.user)
-                
+
             </td>
         </tr>
         <tr>
@@ -43,17 +51,29 @@
         </tr>
         <tr>
             <td colspan="2">
-                <input id="Submit1" type="submit" value="submit" onclick="hideTable();"/>
+                <input id="Submit1" type="submit" value="submit"/>
+                <input id="Submit1" type="button" value="Back" onclick="@("window.location.href='" + @Url.Action("Challenges", "Home") + "'");"/>
             </td>
         </tr>
     </table>
-    <script type="text/javascript">
+    @*<script type="text/javascript">
         function hideTable()
         {
             document.getElementById("tblPostSolution").style.display = 'block';
         }
-    </script>
+    </script>*@
 
+
+
+
+    
 }
+<h2 style="color: firebrick;"><b>@ViewBag.SuccessMessage</b></h2>
+
+</body>
+</html>
+
+
+
 
 

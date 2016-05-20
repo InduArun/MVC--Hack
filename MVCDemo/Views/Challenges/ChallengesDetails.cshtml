@@ -1,35 +1,40 @@
-﻿@model MVCDemo.Models.Challenges
+﻿<html>
+
+@model MVCDemo.Models.Challenges
 
 @{
     ViewBag.Title = "ChallengesDetails";
 }
 
+<body style="background-image: url('../../Images/challen.png'); background-size: cover; color: white">
+    <div>
+        <br />
+        <h2>Description</h2>
 
-<div>
-    <h2>Description</h2>
+       <p  style="color: white"> @Html.DisplayFor(model => model.ChallengeDescription)
+        </p>
 
-  @Html.DisplayFor(model => model.ChallengeDescription)
-
-
-    <!--onclick="@("window.location.href='" + @Url.Action("PostSolution", "PostSolution") + "'");" -->
-    <!--onclick="@("window.location.href='" + @Url.Action("ViewSolutions", "Challenges") + "'");" -->
-    <hr />
-    <input type="button" id="btnSubmitSolution" value="Submit Your Solution " />
-    <input type="button" id="btnViewSolution" value="View Solution " />
+        <!--onclick="@("window.location.href='" + @Url.Action("PostSolution", "PostSolution") + "'");" -->
+        <!--onclick="@("window.location.href='" + @Url.Action("ViewSolutions", "Challenges") + "'");" -->
+        <hr />
+        <input type="button" id="btnSubmitSolution" value="Submit Your Solution " />
+        <input type="button" id="btnViewSolution" value="View Solution " />
     </div>
 
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 
-<script language="javascript">
-    //$('#ChallengeTitle').change(function () {
-    //    alert($(this).val());
-    //});
-    $('#btnSubmitSolution').click(function () {
-        window.location.href = "http://localhost:49502/PostSolution/PostSolution/";
+    <script language="javascript">
+        //$('#ChallengeTitle').change(function () {
+        //    alert($(this).val());
+        //});
+        $('#btnSubmitSolution').click(function () {
+            window.location.href = "http://localhost:49502/PostSolution/PostSolution/";
 
-    });
+        });
 
-    $('#btnViewSolution').click(function () {
-        window.location.href = "http://localhost:49502/Challenges/ViewSolutions/";
-    });
-</script>
+        $('#btnViewSolution').click(function () {
+            window.location.href = "http://localhost:49502/Challenges/ViewSolutions/";
+        });
+    </script>
+    </body>
+</html>
